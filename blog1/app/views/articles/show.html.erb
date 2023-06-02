@@ -1,0 +1,28 @@
+<body class="bg-white">
+    <h1 class="bg-secondary text-center p-4 text-white m-4 display-4">
+        <%= @article.title %>
+    </h1>
+
+    <div class="card bg-secondary text-white display-6">
+        <p class="font-italic m-4">
+        <%= @article.body %>
+    </p>
+    </div>
+
+    <div class="p-4">
+        <ul class="text-danger">
+        <li>
+            <%= link_to 'Edit', edit_article_path(@article) %>
+        </li>
+
+        <li>
+            <%= link_to 'Destroy', article_path(@article), data:{
+                turbo_method: :delete,
+                turbo_confirm:"Are you sure to delete this record?"
+                } %>
+        </li>
+    </ul>
+    </div>
+
+    
+</body>
